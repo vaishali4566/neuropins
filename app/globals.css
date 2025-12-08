@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Light Theme */
+/* | Name           | Usage                       | Hex       |
+| -------------- | --------------------------- | --------- |
+| **Ocean Blue** | Primary buttons, highlights | `#1E88E5` |
+| **Mint Green** | Secondary buttons, accents  | `#4CAF50` |
+| **Slate Gray** | Main text                   | `#2E3A59` |
+| **Mist White** | Page background             | `#F8F9FA` |
+| **Pearl**      | Card background             | `#FFFFFF` |
+| **Coral**      | Notifications, badges       | `#FF6F61` |
+| **Sunshine**   | Small highlights            | `#FFD600` | */
+
+
+/* Dark Theme */
+/* | Name           | Usage                       | Hex       |
+| -------------- | --------------------------- | --------- |
+| **Ocean Blue** | Primary buttons, highlights | `#1E88E5` |
+| **Mint Green** | Secondary buttons, accents  | `#00C853` |
+| **Light Gray** | Main text                   | `#E0E0E0` |
+| **Charcoal**   | Page background             | `#121212` |
+| **Slate**      | Card background             | `#1E1E2F` |
+| **Coral**      | Notifications, badges       | `#FF6F61` |
+| **Sunshine**   | Small highlights            | `#FFD600` | */
+
+
+
