@@ -1,8 +1,8 @@
 // app/page.jsx
 "use client";
 import { useState } from "react";
-import LoginModal from "./components/LoginModal";
-import SignupModal from "./components/SignupModal";
+import LoginModal from "./components/auth/LoginModal";
+import SignupModal from "./components/auth/SignupModal";
 
 export default function LandingPage() {
   const [loginOpen, setLoginOpen] = useState(false);
