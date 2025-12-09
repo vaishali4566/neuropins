@@ -14,5 +14,20 @@ export async function GET(req) {
 export async function POST(req) {
     const user = decodeJwt(req);
 
-    if(!user) return 
+    if(!user) return NextResponse.json({error : "Unauthorized"}, {status : 401});
+
+    const body = await req.json();
+    const {imageURL, title, userTags} = body;
+
+    await connectDB();
+
+    const pin = await Pin.create({
+        imageURL, 
+        title,
+        userTags,
+        uploadedBy : user.userId,
+        status : "pending"
+    });
+
+    return NextResponse.json({ok : true, pin});    
 }

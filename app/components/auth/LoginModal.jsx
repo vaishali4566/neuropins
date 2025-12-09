@@ -1,9 +1,10 @@
-// components/LoginModal.jsx
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import ModalWrapper from "./ModalWrapper";
 
 export default function LoginModal({ isOpen, onClose, onSignupOpen }) {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,9 +20,16 @@ export default function LoginModal({ isOpen, onClose, onSignupOpen }) {
     const data = await res.json();
 
     if (data.ok) {
-      window.location.href = "/feed";
+      // Store token
+      localStorage.setItem("token", data.token);
+
+      // Close modal
+      onClose();
+
+      // Redirect to feed
+      router.push("/feed");
     } else {
-      alert(data.error);
+      alert(data.message || "Login failed");
     }
   }
 
@@ -77,8 +85,8 @@ export default function LoginModal({ isOpen, onClose, onSignupOpen }) {
           <span
             className="text-[#00C853] hover:underline cursor-pointer"
             onClick={() => {
-              onClose(); // Close login modal
-              onSignupOpen(); // Open signup modal
+              onClose();
+              onSignupOpen();
             }}
           >
             Create an account

@@ -14,6 +14,4 @@ const PinSchema = new mongoose.Schema({
 }, {timestamps : true})
 
 
-const Pin = mongoose.model("Pin", PinSchema);
-
-export default Pin;
+export default mongoose.models.Pin || mongoose.model("Pin", PinSchema)
