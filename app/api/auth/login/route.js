@@ -13,6 +13,8 @@ export async function POST(req) {
     // Check user exists
     const user = await User.findOne({ email });
 
+    console.log(user)
+
     if (!user || !comparePassword(password, user.password)) {
       return NextResponse.json(
         { error: "Invalid credentials" },

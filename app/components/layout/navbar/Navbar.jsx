@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import LogoutButton from "../LogoutButton";
+import LogoutButton from "../../LogoutButton";
 import { Menu, User, LogOut } from "lucide-react";
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex items-center justify-between px-6 py-4 bg-slate shadow-lg sticky top-0 z-20">
+    <div className="flex items-center justify-between ml-16 bg-[#121212] px-6 py-4 bg-slate shadow-lg sticky top-0 z-20">
 
       {/* 🔍 Search Bar */}
       <input
@@ -28,7 +28,7 @@ export default function Sidebar() {
 
         {/* ▼ Dropdown Menu */}
         {open && (
-          <div className="absolute right-0 mt-3 w-40 bg-[#1E1E2F] border border-white/10 rounded-lg shadow-lg py-2">
+          <div className="absolute right-0 mt-3 w-40 bg-[#313131] border border-white/10 rounded-lg shadow-lg py-2">
 
             <button
               className="w-full px-4 py-2 flex items-center gap-2 text-sm text-gray-300 hover:bg-[#121212] transition"
@@ -37,7 +37,7 @@ export default function Sidebar() {
             </button>
 
             <LogoutButton>
-              <div className="w-full px-4 py-2 flex items-center gap-2 text-sm text-red-400 hover:bg-[#121212] transition">
+              <div className="w-full px-4 py-2 flex items-center gap-2 text-sm  hover:bg-[#121212] transition">
                 <LogOut size={16} /> Logout
               </div>
             </LogoutButton>
